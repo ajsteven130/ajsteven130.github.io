@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python and Materials Science</title><link href="http://ajsteven130.github.io/" rel="alternate"></link><link href="http://ajsteven130.github.io/feeds/miscellaneous.atom.xml" rel="self"></link><id>http://ajsteven130.github.io/</id><updated>2013-11-21T20:30:00+01:00</updated><entry><title>The First of many, maybe</title><link href="http://ajsteven130.github.io/first!.html" rel="alternate"></link><updated>2013-11-21T20:30:00+01:00</updated><author><name>Adam Stevenson</name></author><id>tag:ajsteven130.github.io,2013-11-21:first!.html</id><summary type="html">&lt;p&gt;I'm trying out github.io and Pelican for the first time, with the eventual 
+aim of having a legitamate blog that helps a few people. At the very least, I'd like it not to embarrass me or my family.&lt;/p&gt;
+&lt;p&gt;The content will revolve around science, python, and the intersection of the two.&lt;/p&gt;
+&lt;p&gt;I am a scientist working in a somwhate strange laboratory that is a mix 
+between the French CNRS and the company Saint-Gobain. We do fundamental
+research and develop technical expertise that should, in the best cases,
+advance the level of materials science and help the research teams within the
+company. Its a strange, but fun situation.&lt;/p&gt;
+&lt;p&gt;I became enamoured with Python during my grad school where I used it to 
+build a model of light scattering in ceramic materials. I was shocked at
+how easily it was to start from nothing and develop something useful. Today,
+we are starting to use the IPython notebook for data analysis and teaching, but
+I hope to expand our use of Python considerably. This blog will look at the 
+progress we make, the solutions we find, and how we are able to spread Python.&lt;/p&gt;</summary><category term="python"></category><category term="science"></category></entry></feed>
