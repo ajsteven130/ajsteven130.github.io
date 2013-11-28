@@ -1668,17 +1668,4 @@ Author: Adam Stevenson
 &lt;p&gt;Pelican also has its own theme management system, but I did not use it.&lt;/p&gt;
 &lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;At this point, you should have a working blog, and it probably took less time than it took to write this post. Hopefully, this guide was reasonably complete and easy to understand. If you have comments, suggestions, or questions, please leave them below and I will try to update as needed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[]:
-&lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;/div&gt;</summary><category term="pelican"></category><category term="python"></category><category term="getting started"></category><category term="Ipython Notebook"></category></entry></feed>
