@@ -1691,23 +1691,16 @@ table.dataframe th, td {
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Setting up this blog was shockingly easy thanks to the tools and documentation available. Sarting from scratch, it took me just over one hour to get the blog up and running with the two previous posts. Since then, I changed the theme, got comments working with Disqus, and personalized some of the links. Here is a step by step guide that should take an hour or two to get your own blog running. You should have some familiarity with python, github, and the command line; but you certainly don't need to be an expert. If I can do it, anybody can.</p>
-<h2 id="get-python">Get Python</h2>
+<h3 id="get-python">Get Python</h3>
 <p>If you are reading this blog, chances are you are a regular user of Python, but, if you don't already have Python installed, you'll need to get it up and running since some of the other software depends on it. If you are on Windows, <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> is great. I set this blog up from my Linux laptop where I also have the Anaconda distribution installed.</p>
-<h2 id="get-pelican">Get Pelican</h2>
-<p><a href="http://getpellican.com">Pelican</a> is a static blog generator that made setting things up incredibly easy. I learned about it after stumbling upon <a href="http://jakevdp.github.io/">Jake VanderPlas's blog</a>. Simply download and install Pelican using Python's built in package manager, PIP. At the command line, type: <code>pip install python</code>. You can also install the other packages Pelican depends on with PIP, the most important of which is Fabric (which we will use later to create the site). If you know what you are doing, you can also install pelican into its own virtual environment, but this is probably unnecessary for most people. There is a terrific <a href="http://docs.getpelican.com/en/3.3.0/getting_started.html">getting started guide</a> for Pelican that helped me a lot.</p>
-<h2 id="setup-your-site">Setup Your Site</h2>
+<h3 id="get-pelican">Get Pelican</h3>
+<p><a href="http://getpellican.com">Pelican</a> is a static blog generator that made setting things up incredibly easy. I learned about it after stumbling upon <a href="http://jakevdp.github.io/">Jake VanderPlas's blog</a>. Simply download and install Pelican using Python's built in package manager, PIP. At the command line, type: <code>pip install pelican</code>. You can also install the other packages Pelican depends on with PIP, the most important of which is Fabric (which we will use later to create the site). If you know what you are doing, you can also install pelican into its own virtual environment, but this is probably unnecessary for most people. There is a terrific <a href="http://docs.getpelican.com/en/3.3.0/getting_started.html">getting started guide</a> for Pelican that helped me a lot.</p>
+<h3 id="setup-your-site">Setup Your Site</h3>
 <p>One of the best parts of Pelican is its quick setup utility, but you will need to have thought about your webhost before running it. If you want to use ftp or other similar protocols, you'll want to have that all set up and ready before using the quickstart utility. Since I am using github, I manage uploading the site to the server through git. Create a folder for your blog and open it up at a command prompt. Now, type <code>pelican-quickstart</code> and answer a few questions. The quickstart utility creates a file structure and the necessary configuration files. The most important thing is to answer 'yes' when it asks whether you want it to creat a makefile and Fabric file for easy site generation. This option will make your life much easier.</p>
-<h2 id="get-add-ons">Get Add-ons</h2>
-<p>The default setup used by Pelican is not bad at all, but its nice to have all the extra bells and whistles like plugins and new themes. Github is the central repository for Pelican, and you should clone the pelican-plugins and pelican-themes repositories to get a lot of options. If you want to use Ipython Notebooks with your blog, you should also clone the pelican-ipythonnb repository.</p>
-<p>If you are not too familiar with github, the process for cloning a repository is:</p>
-<p>(Linux) 1. Log in to github and navigate to the repository 2. Click on the 'Fork' button in the upper left hand corner 3. Use git to clone the repository with the command <code>git clone https://your_user_name/repository_name</code></p>
-<p>On Windows, there is a <a href="http://windows.github.com/">GUI based program</a> that makes cloning repositories very easy.</p>
-<p>In the pelican-themes repository, you will find lots of good options and you can see most of them <a href="http://pelicanthemes.com/">here</a>. For starting out, though, I highly recommend the octopress theme available in the pelican-octopress-theme repository on github. It looks good, and everything seems to work perfectly, right out of the box.</p>
-<p>Pelican also has its own theme management system, but I did not use it.</p>
 <h3 id="pelicanconf.py---making-the-blog-yours">Pelicanconf.py - Making the blog yours</h3>
 <p>Most of the important tweaking you will do to the look and feel of your blog is done in the pelicanconf.py file that the quickstart utility created. This is where you set the theme, create links for your sidebar, and generally manage the aesthetics. The most important thing to remember is: DO NOT SET YOUR SITE URL IN THIS FILE. Your site URL is set in the publishconf.py file, and setting it in the pelicanconf.py file will break your site.</p>
-<p>To use the octopress (or any theme), create the following line in pelicanconf.py: <code>THEME=&quot;/path/to/your/themes/pelican-octopress-theme&quot;</code> In general, changing the theme is as easy as changing this line to your theme of choice.</p>
-<h2 id="generate-content">Generate Content</h2>
+<p>To use the octopress (or any theme), create the following line in pelicanconf.py: <code>THEME=&quot;/path/to/your/themes/pelican-octopress-theme&quot;</code> In general, changing the theme is as easy as changing this line to your theme of choice. More information on themes is below.</p>
+<h3 id="generate-content">Generate Content</h3>
 <p>To create a post, just start a markdown or reStructured text document in your favorite text editor. Pelican makes heavy use of metadate to generate the site, so each post needs a header with the appropriate information. I prefer markdown, so the metadate for my first post is:</p>
 <pre><code>Title: The First of many, maybe
 Date: 2013-11-21 20:30
@@ -1717,14 +1710,21 @@ Slug: first
 Author: Adam Stevenson
 </code></pre>
 <p>Once you are done with the post, put it in the content folder created by the quickstart utility.</p>
-<h2 id="create-html-and-publish">Create HTML and Publish</h2>
+<h3 id="create-html-and-publish">Create HTML and Publish</h3>
 <p>With your new post in the content folder, simply open your blog's folder at a command prompt and type <code>fab build</code>. If there are not any major errors, you can then type <code>fab serve</code> and check out your blog at localhost:8000 in your browser. If you are happy with it, type <code>fab publish</code> to produce the final version that you should upload to your webhost. If you did not use the automatic ftp (or whatever) settings during the quickstart, now you simply upload the contents of the 'Output' folder to your webhost. If everything went well, your blog should be up and running.</p>
-<h2 id="comments-with-disqus">Comments with Disqus</h2>
+<h3 id="comments-with-disqus">Comments with Disqus</h3>
 <p>There is a Pelican plugin for Google+ comments, but I found Disqus to be much easier to get working. With the octopress theme, you simple sign up for an account at <a href="www.disqus.com">disqus.com</a> and paste the sitename it gives you into the appropriate field at the end of your publishconf.py file. Be sure to uncomment the line, if you want it to work.</p>
-<h2 id="ipython-notebooks">Ipython Notebooks</h2>
-<p>There are two ways to get Ipython notebooks to work with your blog. The first one I used was the pelican-ipythonnb plugin. With the github repository cloned to your local drive, and follow the instructions in the readme repository. For me, it worked easily the first time.</p>
+<h3 id="ipython-notebooks">Ipython Notebooks</h3>
+<p>There are two ways to get Ipython notebooks to work with your blog. The first one I used was the <a href="https://github.com/danielfrg/pelican-ipythonnb">pelican-ipythonnb plugin</a>. With the github repository cloned to your local drive, follow the instructions in the repository's readme. For me, it worked easily the first time.</p>
 <p>The other option is to use the liquidtags plugin, but I have not tried it out yet.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h3 id="get-add-ons">Get Add-ons</h3>
+<p>The default setup used by Pelican is not bad at all, but its nice to have all the extra bells and whistles like plugins and new themes. Github is the central repository for Pelican, and you should clone the pelican-plugins and pelican-themes repositories to get a lot of options. If you want to use Ipython Notebooks with your blog, you should also clone the pelican-ipythonnb repository.</p>
+<p>If you are not too familiar with github, the process for cloning a repository is:</p>
+<p>(Linux) 1. Log in to github and navigate to the repository 2. Click on the 'Fork' button in the upper left hand corner 3. Use git to clone the repository with the command <code>git clone https://your_user_name/repository_name</code></p>
+<p>On Windows, there is a <a href="http://windows.github.com/">GUI based program</a> that makes cloning repositories very easy.</p>
+<p>In the pelican-themes repository, you will find lots of good options and you can see most of them <a href="http://pelicanthemes.com/">here</a>. For starting out, though, I highly recommend the octopress theme available in the pelican-octopress-theme repository on github. It looks good, and everything seems to work perfectly, right out of the box.</p>
+<p>Pelican also has its own theme management system, but I did not use it.</p>
+<h3 id="conclusion">Conclusion</h3>
 <p>At this point, you should have a working blog, and it probably took less time than it took to write this post. Hopefully, this guide was reasonably complete and easy to understand. If you have comments, suggestions, or questions, please leave them below and I will try to update as needed.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
