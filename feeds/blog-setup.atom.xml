@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam J. Stevenson</title><link href="http://ajsteven130.github.io/" rel="alternate"></link><link href="http://ajsteven130.github.io/feeds/all.atom.xml" rel="self"></link><id>http://ajsteven130.github.io/</id><updated>2014-07-14T20:30:00+02:00</updated><entry><title>Org-Mode with Pelican</title><link href="http://ajsteven130.github.io/org-mode-with-pelican.html" rel="alternate"></link><updated>2014-07-14T20:30:00+02:00</updated><author><name>Adam Stevenson</name></author><id>tag:ajsteven130.github.io,2014-07-14:org-mode-with-pelican.html</id><summary type="html">&lt;h1&gt;Will python code work?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam J. Stevenson</title><link href="http://ajsteven130.github.io/" rel="alternate"></link><link href="http://ajsteven130.github.io/feeds/blog-setup.atom.xml" rel="self"></link><id>http://ajsteven130.github.io/</id><updated>2014-07-14T20:30:00+02:00</updated><entry><title>Org-Mode with Pelican</title><link href="http://ajsteven130.github.io/org-mode-with-pelican.html" rel="alternate"></link><updated>2014-07-14T20:30:00+02:00</updated><author><name>Adam Stevenson</name></author><id>tag:ajsteven130.github.io,2014-07-14:org-mode-with-pelican.html</id><summary type="html">&lt;h1&gt;Will python code work?&lt;/h1&gt;
 &lt;p&gt;this is a test of the export facilities in org-mode&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;
 &lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
@@ -781,17 +781,4 @@ Author: Adam Stevenson
 &lt;p&gt;At this point, you should have a working blog, and it probably took less time than it took to write this post. Hopefully, this guide was reasonably complete and easy to understand. If you have comments, suggestions, or questions, please leave them below and I will try to update as needed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category><category term="getting started"></category><category term="Ipython Notebook"></category></entry><entry><title>The First of many, maybe</title><link href="http://ajsteven130.github.io/first!.html" rel="alternate"></link><updated>2013-11-21T20:30:00+01:00</updated><author><name>Adam Stevenson</name></author><id>tag:ajsteven130.github.io,2013-11-21:first!.html</id><summary type="html">&lt;p&gt;I'm trying out github.io and Pelican for the first time, with the eventual 
-aim of having a legitamate blog that helps a few people. At the very least, I'd like it not to embarrass me or my family.&lt;/p&gt;
-&lt;p&gt;The content will revolve around science, python, and the intersection of the two.&lt;/p&gt;
-&lt;p&gt;I am a scientist working in a somwhate strange laboratory that is a mix 
-between the French CNRS and the company Saint-Gobain. We do fundamental
-research and develop technical expertise that should, in the best cases,
-advance the level of materials science and help the research teams within the
-company. Its a strange, but fun situation.&lt;/p&gt;
-&lt;p&gt;I became enamoured with Python during my grad school where I used it to 
-build a model of light scattering in ceramic materials. I was shocked at
-how easily it was to start from nothing and develop something useful. Today,
-we are starting to use the IPython notebook for data analysis and teaching, but
-I hope to expand our use of Python considerably. This blog will look at the 
-progress we make, the solutions we find, and how we are able to spread Python.&lt;/p&gt;</summary><category term="python"></category><category term="science"></category></entry></feed>
+&lt;/div&gt;&lt;/p&gt;</summary><category term="pelican"></category><category term="python"></category><category term="getting started"></category><category term="Ipython Notebook"></category></entry></feed>
