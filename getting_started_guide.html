@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Adam Stevenson" />
+        <meta name="copyright" content="Adam Stevenson" />
+	<!-----google web fonts---->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400|Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+	<!---Setting for ipython notebook liquid tags--->
+	<!--END setting for ipython notebook liquid tags--->
+<meta name="keywords" content="pelican, python, getting started, Ipython Notebook, Blog Setup, " />
+        <title>Getting Started with Pelican · Adam J. Stevenson
+</title>
+        <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="/theme/images/apple-touch-icon-144x144.png" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>Adam J. Stevenson</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/pages/research.html">Research</a></li>
+                            <li ><a href="/pages/publications.html">Publications</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="/getting_started_guide.html"> Getting Started with Pelican  <small> A step-by-step guide to how I created this blog. </small>  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Setting up this blog was shockingly easy thanks to the tools and documentation available. Sarting from scratch, it took me just over one hour to get the blog up and running with the two previous posts. Since then, I changed the theme, got comments working with Disqus, and personalized some of the links. Here is a step by step guide that should take an hour or two to get your own blog running. You should have some familiarity with python, github, and the command line; but you certainly don't need to be an expert. If I can do it, anybody can.</p>
+<h3 id="Get-Python">Get Python<a class="anchor-link" href="#Get-Python">&#182;</a></h3><p>If you are reading this blog, chances are you are a regular user of Python, but, if you don't already have Python installed, you'll need to get it up and running since some of the other software depends on it. If you are on Windows, <a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a> is great. I set this blog up from my Linux laptop where I also have the Anaconda distribution installed.</p>
+<h3 id="Get-Pelican">Get Pelican<a class="anchor-link" href="#Get-Pelican">&#182;</a></h3><p><a href="http://getpellican.com">Pelican</a> is a static blog generator that made setting things up incredibly easy. I learned about it after stumbling upon <a href="http://jakevdp.github.io/">Jake VanderPlas's blog</a>. Simply download and install Pelican using Python's built in package manager, PIP. At the command line, type: <code>pip install pelican</code>. You can also install the other packages Pelican depends on with PIP, the most important of which is Fabric (which we will use later to create the site). If you know what you are doing, you can also install pelican into its own virtual environment, but this is probably unnecessary for most people. There is a terrific <a href="http://docs.getpelican.com/en/3.3.0/getting_started.html">getting started guide</a> for Pelican that helped me a lot.</p>
+<h3 id="Setup-Your-Site">Setup Your Site<a class="anchor-link" href="#Setup-Your-Site">&#182;</a></h3><p>One of the best parts of Pelican is its quick setup utility, but you will need to have thought about your webhost before running it. If you want to use ftp or other similar protocols, you'll want to have that all set up and ready before using the quickstart utility. Since I am using github, I manage uploading the site to the server through git. Create a folder for your blog and open it up at a command prompt. Now, type <code>pelican-quickstart</code> and answer a few questions. The quickstart utility creates a file structure and the necessary configuration files. The most important thing is to answer 'yes' when it asks whether you want it to creat a makefile and Fabric file for easy site generation. This option will make your life much easier.</p>
+<h3 id="Pelicanconf.py---Making-the-blog-yours">Pelicanconf.py - Making the blog yours<a class="anchor-link" href="#Pelicanconf.py---Making-the-blog-yours">&#182;</a></h3><p>Most of the important tweaking you will do to the look and feel of your blog is done in the pelicanconf.py file that the quickstart utility created. This is where you set the theme, create links for your sidebar, and generally manage the aesthetics. The most important thing to remember is: DO NOT SET YOUR SITE URL IN THIS FILE. Your site URL is set in the publishconf.py file, and setting it in the pelicanconf.py file will break your site.</p>
+<p>To use the octopress (or any theme), create the following line in pelicanconf.py: <code>THEME="/path/to/your/themes/pelican-octopress-theme"</code> In general, changing the theme is as easy as changing this line to your theme of choice. More information on themes is below.</p>
+<h3 id="Generate-Content">Generate Content<a class="anchor-link" href="#Generate-Content">&#182;</a></h3><p>To create a post, just start a markdown or reStructured text document in your favorite text editor. Pelican makes heavy use of metadate to generate the site, so each post needs a header with the appropriate information. I prefer markdown, so the metadate for my first post is:</p>
+
+<pre><code>Title: The First of many, maybe
+Date: 2013-11-21 20:30
+Tags: python, science
+Category: miscellaneous
+Slug: first
+Author: Adam Stevenson</code></pre>
+<p>Once you are done with the post, put it in the content folder created by the quickstart utility.</p>
+<h3 id="Create-HTML-and-Publish">Create HTML and Publish<a class="anchor-link" href="#Create-HTML-and-Publish">&#182;</a></h3><p>With your new post in the content folder, simply open your blog's folder at a command prompt and type <code>fab build</code>. If there are not any major errors, you can then type <code>fab serve</code> and check out your blog at localhost:8000 in your browser. If you are happy with it, type <code>fab publish</code> to produce the final version that you should upload to your webhost. If you did not use the automatic ftp (or whatever) settings during the quickstart, now you simply upload the contents of the 'Output' folder to your webhost. If everything went well, your blog should be up and running.</p>
+<h3 id="Comments-with-Disqus">Comments with Disqus<a class="anchor-link" href="#Comments-with-Disqus">&#182;</a></h3><p>There is a Pelican plugin for Google+ comments, but I found Disqus to be much easier to get working. With the octopress theme, you simple sign up for an account at <a href="www.disqus.com">disqus.com</a> and paste the sitename it gives you into the appropriate field at the end of your publishconf.py file. Be sure to uncomment the line, if you want it to work.</p>
+<h3 id="Ipython-Notebooks">Ipython Notebooks<a class="anchor-link" href="#Ipython-Notebooks">&#182;</a></h3><p>There are two ways to get Ipython notebooks to work with your blog. The first one I used was the <a href="https://github.com/danielfrg/pelican-ipythonnb">pelican-ipythonnb plugin</a>. With the github repository cloned to your local drive, follow the instructions in the repository's readme. For me, it worked easily the first time.</p>
+<p>The other option is to use the liquidtags plugin, but I have not tried it out yet.</p>
+<h3 id="Get-Add-ons">Get Add-ons<a class="anchor-link" href="#Get-Add-ons">&#182;</a></h3><p>The default setup used by Pelican is not bad at all, but its nice to have all the extra bells and whistles like plugins and new themes. Github is the central repository for Pelican, and you should clone the pelican-plugins and pelican-themes repositories to get a lot of options. If you want to use Ipython Notebooks with your blog, you should also clone the pelican-ipythonnb repository.</p>
+<p>If you are not too familiar with github, the process for cloning a repository is:</p>
+<p>(Linux)</p>
+<ol>
+<li>Log in to github and navigate to the repository</li>
+<li>Click on the 'Fork' button in the upper left hand corner</li>
+<li>Use git to clone the repository with the command <code>git clone https://your_user_name/repository_name</code></li>
+</ol>
+<p>On Windows, there is a <a href="http://windows.github.com/">GUI based program</a> that makes cloning repositories very easy.</p>
+<p>In the pelican-themes repository, you will find lots of good options and you can see most of them <a href="http://pelicanthemes.com/">here</a>. For starting out, though, I highly recommend the octopress theme available in the pelican-octopress-theme repository on github. It looks good, and everything seems to work perfectly, right out of the box.</p>
+<p>Pelican also has its own theme management system, but I did not use it.</p>
+<h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h3><p>At this point, you should have a working blog, and it probably took less time than it took to write this post. Hopefully, this guide was reasonably complete and easy to understand. If you have comments, suggestions, or questions, please leave them below and I will try to update as needed.</p>
+
+</div>
+</div>
+</div></p>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+ 
+                <li class="previous_article">« <a href="/first!.html" title="Previous: The First of many, maybe - First post for a new blog">The First of many, maybe <small>First post for a new blog</small></a></li>
+ 
+ 
+                <li class="next_article"><a href="/ipython-notebook-integration.html" title="Next: IPython Notebook Integration - Testing ipython notebooks with the LiquidTags plugin">IPython Notebook Integration <small>Testing ipython notebooks with the LiquidTags plugin</small></a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2013-11-28T23:00:00+01:00">nov. 28, 2013</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#Blog-Setup-ref">Blog Setup</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#getting-started-ref">getting started
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#Ipython-Notebook-ref">Ipython Notebook
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#pelican-ref">pelican
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#python-ref">python
+                    <span>3</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    </body>
+</html>
